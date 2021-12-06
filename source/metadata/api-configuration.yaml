@@ -19,8 +19,8 @@ apis:
       type: http
       displayName: Employee API
       description: API allows manipulate employee records
-      serviceUrl: https://trojan-api-backend.azurewebsites.net/
-      openApiSpec: https://trojan-api-backend.azurewebsites.net/swagger/v1/swagger.json
+      serviceUrl: https://apimgitops-api-backend.azurewebsites.net/
+      openApiSpec: https://apimgitops-api-backend.azurewebsites.net/swagger/v1/swagger.json
       openApiSpecFormat: swagger
       policy: /api/source/metadata/policies/apiPolicyHeaders.xml
       suffix: conf
@@ -93,7 +93,7 @@ loggers:
 backends:
     - title: EmployeeBackend
       description: The employe api backend
-      url: https://trojan-api-backend.azurewebsites.net/
+      url: https://apimgitops-api-backend.azurewebsites.net/
       protocol: https
       credentials:
         query: 

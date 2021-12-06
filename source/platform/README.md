@@ -4,5 +4,6 @@
 ### Deploy everything
 
 ```
-az deployment group create --resource-group 'trojan-resources'  --template-file .\platform.bicep
+az group create 'apimgitops-rg' -l westeurope
+az deployment group create --resource-group 'apimgitops-rg'  --template-file .\platform.bicep
 ```

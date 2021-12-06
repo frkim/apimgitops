@@ -4,14 +4,14 @@ param apiManagementServiceName string
 param subscriptionName string
 param productId string
 
-resource moimUser 'Microsoft.ApiManagement/service/users@2020-06-01-preview' = {
-  name: '${apiManagementServiceName}/moimhossain'
+resource user1 'Microsoft.ApiManagement/service/users@2020-06-01-preview' = {
+  name: '${apiManagementServiceName}/fxkim'
   properties: {
-    firstName: 'Moim'
-    lastName: 'Hossain'
-    email: 'moimh.ossain@microsoft.com'
+    firstName: 'Fx'
+    lastName: 'Kim'
+    email: 'apim@microsoft.com'
     state: 'active'
-    note: 'Note for Moim Hossain'
+    note: 'User note'
   }
 }
 
@@ -20,6 +20,6 @@ resource subscription1 'Microsoft.ApiManagement/service/subscriptions@2017-03-01
   properties: {
     displayName: subscriptionName
     productId: productId
-    userId: moimUser.id
+    userId: user1.id
   }
 }
