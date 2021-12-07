@@ -2,7 +2,7 @@
 param apiManagementServiceName string
 param location string = resourceGroup().location
 
-param publisherEmail string = 'frkim@microsoft.com'
+param publisherEmail string = 'apim@microsoft.com'
 param publisherName string = 'ApimGitops Inc.'
 param sku string
 param skuCount int
