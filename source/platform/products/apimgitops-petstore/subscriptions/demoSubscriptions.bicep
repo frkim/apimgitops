@@ -5,13 +5,12 @@ param subscriptionName string
 param productId string
 
 resource user1 'Microsoft.ApiManagement/service/users@2020-06-01-preview' = {
-  name: '${apiManagementServiceName}/apimuser1'
+  name: '${apiManagementServiceName}/apiuser1'
   properties: {
-    firstName: 'User1'
-    lastName: 'APIM'
-    email: 'apim@microsoft.com'
+    firstName: 'Test'
+    lastName: 'api-user1'
+    email: 'apiuser@microsoft.com'
     state: 'active'
-    note: 'User note'
   }
 }
 
