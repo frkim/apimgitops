@@ -9,7 +9,7 @@ param skuCount int
 
 param resourceTags object 
 
-resource apiManagementService 'Microsoft.ApiManagement/service@2020-06-01-preview' = {
+resource apiManagementService 'Microsoft.ApiManagement/service@2020-12-01' = {
   name: apiManagementServiceName
   location: location
   sku: {
@@ -21,4 +21,26 @@ resource apiManagementService 'Microsoft.ApiManagement/service@2020-06-01-previe
     publisherEmail: publisherEmail
   }
   tags: resourceTags
+}
+
+// Create Application Insights
+resource appInsightsApim 'Microsoft.Insights/components@2020-02-02' = {
+  name: 'AppInsightsApim2021'
+  location: '${resourceGroup().location}'
+  kind: 'web'
+  properties:{
+    Application_Type:'web'
+  }
+}
+
+// Create Logger and link logger
+resource apimLogger 'Microsoft.ApiManagement/service/loggers@2019-12-01' = {
+  name: '${apiManagementService.name}/${apiManagementService.name}-logger'
+  properties:{
+    resourceId: '${appInsightsApim.id}'
+    loggerType: 'applicationInsights'
+    credentials:{
+      instrumentationKey: '${appInsightsApim.properties.InstrumentationKey}'
+    }
+  }
 }

@@ -36,15 +36,4 @@ module petstoreApi 'apis/petstore/petstore.bicep' = {
   }
 }
 
-/*
-module employeeApi 'apis/employee/employee.bicep' = {
-  name: 'employee-api'
-  dependsOn: [
-    apimgitopsPetStoreProduct
-  ]
-  params: {
-    apiManagementServiceName: apiManagementServiceName
-    productName: productName
-  }  
-}
-*/
+

@@ -4,7 +4,7 @@ param apiManagementServiceName string
 param subscriptionName string
 param productId string
 
-resource user1 'Microsoft.ApiManagement/service/users@2020-06-01-preview' = {
+resource user1 'Microsoft.ApiManagement/service/users@2020-12-01' = {
   name: '${apiManagementServiceName}/apiuser1'
   properties: {
     firstName: 'Test'

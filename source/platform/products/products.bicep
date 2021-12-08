@@ -7,3 +7,10 @@ module apimgitopsPetstoreProduct 'apimgitops-petstore/apimgitops-petstore.bicep'
     apiManagementServiceName: apiManagementServiceName
   }  
 }
+
+module conferenceProduct 'conference/conference.bicep' = {
+  name: '${apiManagementServiceName}-conferenceproduct'  
+  params: {
+    apiManagementServiceName: apiManagementServiceName
+  }  
+}
