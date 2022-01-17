@@ -102,6 +102,37 @@
         ]
       }
     },
+    "/session/{id}/feedback": {
+      "post": {
+        "description": "Retreive a representation of a single session by Id",
+        "operationId": "SubmitSession",
+        "parameters": [
+          {
+            "$ref": "#/parameters/id"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "produces": [
+          "application/hal+json",
+          "text/plain"
+        ],
+        "consumes": [
+          "text/plain"
+        ]
+      }
+    },
     "/speakers": {
       "get": {
         "operationId": "GetSpeakers",
