@@ -105,7 +105,7 @@
     "/session/{id}/feedback": {
       "post": {
         "description": "Retreive a representation of a single session by Id",
-        "operationId": "SubmitFeedback",
+        "operationId": "SubmitSessionFeedback",
         "parameters": [
           {
             "$ref": "#/parameters/id"
