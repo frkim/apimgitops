@@ -25,7 +25,7 @@ resource apiManagementService 'Microsoft.ApiManagement/service@2020-12-01' = {
 // Create Application Insights
 resource appInsightsApim 'Microsoft.Insights/components@2020-02-02' = {
   name: 'AppInsightsApim2021'
-  location: '${resourceGroup().location}'
+  location: location
   kind: 'web'
   properties:{
     Application_Type:'web'
