@@ -1,6 +1,6 @@
 
 param apiManagementServiceName string
-param location string = resourceGroup().location
+param region string = resourceGroup().location
 
 param publisherEmail string = 'apim@microsoft.com'
 param publisherName string = 'ApimGitops Inc.'
@@ -11,7 +11,7 @@ param resourceTags object
 
 resource apiManagementService 'Microsoft.ApiManagement/service@2020-12-01' = {
   name: apiManagementServiceName
-  location: location
+  location: region
   sku: {
     name: sku
     capacity: skuCount
