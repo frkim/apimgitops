@@ -11,6 +11,7 @@ param resourceTags object
 
 resource apiManagementService 'Microsoft.ApiManagement/service@2020-12-01' = {
   name: apiManagementServiceName
+  location: location
   sku: {
     name: sku
     capacity: skuCount
