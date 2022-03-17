@@ -33,7 +33,7 @@
   "paths": {
     "/sessions": {
       "get": {
-        "description": "A list of sessions.  Optional parameters work as filters to reduce the listed sessions",
+        "description": "A list of sessions. Optional parameters work as filters to reduce the listed sessions",
         "operationId": "GetSessions",
         "parameters": [
           {
