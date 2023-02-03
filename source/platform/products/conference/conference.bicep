@@ -39,7 +39,7 @@ resource conferenceSub 'Microsoft.ApiManagement/service/subscriptions@2017-03-01
   properties: {
     displayName: 'Conference Subscription'
     productId: conferenceProduct.id
-    userId: '${user2.id}'
+    userId: user2.id
   }
 }
 

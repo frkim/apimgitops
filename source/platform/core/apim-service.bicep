@@ -36,10 +36,10 @@ resource appInsightsApim 'Microsoft.Insights/components@2020-02-02' = {
 resource apimLogger 'Microsoft.ApiManagement/service/loggers@2019-12-01' = {
   name: '${apiManagementService.name}/${apiManagementService.name}-logger'
   properties:{
-    resourceId: '${appInsightsApim.id}'
+    resourceId: appInsightsApim.id
     loggerType: 'applicationInsights'
     credentials:{
-      instrumentationKey: '${appInsightsApim.properties.InstrumentationKey}'
+      instrumentationKey: appInsightsApim.properties.InstrumentationKey
     }
   }
 }
