@@ -1,5 +1,5 @@
 
-param apiManagementServiceName string = 'apimgitops-dev-apimservice'
+param apiManagementServiceName string = 'frkimapimgitops-dev'
 param location string = resourceGroup().location
 
 param sku string = 'Developer'
