@@ -20,7 +20,7 @@ resource petStoreApi 'Microsoft.ApiManagement/service/apis@2021-04-01-preview' =
   }
 }
 
-resource petStoreApiWithProduct 'Microsoft.ApiManagement/service/products/apis@2021-04-01-preview' = {
+resource conferenceProduct 'Microsoft.ApiManagement/service/products/apis@2021-04-01-preview' = {
   name: '${apiManagementServiceName}/${productName}/PetStore'
   dependsOn: [
     petStoreApi
