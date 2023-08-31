@@ -10,7 +10,8 @@ resource conferenceApi 'Microsoft.ApiManagement/service/apis@2021-04-01-preview'
     format: 'swagger-json'
     value: loadTextContent('conference-openapi.json')
     path: 'conference'
-    subscriptionRequired: false    
+    subscriptionRequired: false
+    description: 'Conference APIs'
   }
 }
 
@@ -18,7 +19,7 @@ resource conferenceApi 'Microsoft.ApiManagement/service/apis@2021-04-01-preview'
 resource conferenceProduct 'Microsoft.ApiManagement/service/products@2020-06-01-preview' = {
   name: '${apiManagementServiceName}/${conferenceProductName}'
   properties: {
-    displayName: 'Conference Product'
+    displayName: 'Conference'
     subscriptionRequired: false
     state: 'published'    
   }
