@@ -34,7 +34,8 @@ resource appInsightsApim 'Microsoft.Insights/components@2020-02-02' = {
 
 // Create Logger and link logger
 resource apimLogger 'Microsoft.ApiManagement/service/loggers@2019-12-01' = {
-  name: '${apiManagementService.name}/${apiManagementService.name}-logger'
+  parent: apiManagementService
+  name: '${apiManagementService.name}-logger'
   properties:{
     resourceId: appInsightsApim.id
     loggerType: 'applicationInsights'

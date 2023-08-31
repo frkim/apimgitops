@@ -44,7 +44,8 @@ resource conferenceSub 'Microsoft.ApiManagement/service/subscriptions@2017-03-01
 }
 
 resource conferenceApiWithProduct 'Microsoft.ApiManagement/service/products/apis@2021-04-01-preview' = {
-  name: '${conferenceProduct.name}/Conference'
+  parent: conferenceProduct
+  name: 'Conference'
   dependsOn: [
     conferenceApi
   ]
