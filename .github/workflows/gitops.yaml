@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+  workflow_dispatch:
+
 name: Azure ARM
 jobs:
   deploy:
