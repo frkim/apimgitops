@@ -1,7 +1,7 @@
 
 param apiManagementServiceName string
 
-module apimgitopsPetstoreProduct 'apimgitops-petstore/apimgitops-petstore.bicep' = {
+module apimgitopsPetstoreProduct 'petstore/apis/petstore/petstore.bicep' = {
   name: '${apiManagementServiceName}-product'  
   params: {
     apiManagementServiceName: apiManagementServiceName
