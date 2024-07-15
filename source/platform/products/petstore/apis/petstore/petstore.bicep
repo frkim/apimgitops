@@ -1,28 +1,22 @@
-
 param apiManagementServiceName string
-param productName string
+var petstoreProductName = 'PetStore'
 
-resource petStoreApi 'Microsoft.ApiManagement/service/apis@2021-04-01-preview' = {
-  name: '${apiManagementServiceName}/PetStore'  
-/*
+resource petstoreProduct 'Microsoft.ApiManagement/service/products@2022-08-01' = {
+  name: '${apiManagementServiceName}/${petstoreProductName}'
   properties: {
-    format: 'swagger-link-json'
-    value: 'http://petstore.swagger.io/v2/swagger.json'
-    path: 'petstore'
-    subscriptionRequired: true    
+    displayName: 'Pet Store'
+    subscriptionRequired: false
+    state: 'published'    
   }
-*/
+}
+
+resource petStoreApi 'Microsoft.ApiManagement/service/products/apis@2022-08-01' = {
+  name: '${apiManagementServiceName}/PetStoreApi'  
   properties: {
-    format: 'swagger-json'
+    format: 'openapi'
     value: loadTextContent('petstore-openapi.json')
     path: 'petstore'
     subscriptionRequired: false    
   }
 }
 
-resource conferenceProduct 'Microsoft.ApiManagement/service/products/apis@2021-04-01-preview' = {
-  name: '${apiManagementServiceName}/${productName}/PetStore'
-  dependsOn: [
-    petStoreApi
-  ]
-}
