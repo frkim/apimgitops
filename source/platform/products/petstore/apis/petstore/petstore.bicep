@@ -10,7 +10,7 @@ resource petstoreProduct 'Microsoft.ApiManagement/service/products@2022-08-01' =
   }
 }
 
-resource petStoreApi 'Microsoft.ApiManagement/service/products/apis@2022-08-01' = {
+resource petStoreApi 'Microsoft.ApiManagement/service/apis@2022-08-01' = {
   name: '${apiManagementServiceName}/PetStoreApi'  
   properties: {
     format: 'openapi'
